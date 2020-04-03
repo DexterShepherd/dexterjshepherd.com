@@ -36,8 +36,6 @@ const shader = {
   ${glNoise2d}
 
 
-  float eSize = 0.03;
-  float eBlur = 0.001;
 
   float movementSpeed = 0.15;
 
@@ -57,20 +55,6 @@ const shader = {
     st *= 1.0 + (snoise(vec3(0.1, 0.1, uTime * movementSpeed)) * 0.003);
     st += vec2(0.5);
 
-
-
-
-    vec2 ePos = (vec2(
-      snoise(vec3(0.1, 0.2, uTime * movementSpeed)),
-      snoise(vec3(0.2, 0.3, uTime * movementSpeed))
-    ) + vec2(1.0)) * 0.4;
-
-
-    float ellipse = smoothstep(eSize, eSize + eBlur, distance(st, ePos));
-    
-
-
-    vec3 eColor1 = mix(vec3(1.0, 0.0, 1.0), vec3(0.0, 0.5, 1.0), (sin(uTime) + 1.0) * 0.5);
 
     vec4 last = texture2D(uLast, st);
     vec4 c = last;
@@ -109,17 +93,7 @@ const shader = {
 
     c.xyz = sum.xyz;
 
-    
-    // c = mix(
-    //   vec4(eColor1, 1.0),
-    //   c,
-    //   ellipse
-    // );
-
-
-
     gl_FragColor = c;
-    // gl_FragColor = vec4(vec3(snoise(vec3(st * 2.0, uTime * 0.1))), 1.0);
   }
   `
 }
@@ -205,7 +179,7 @@ const EllipseBuffer = ({ buffers }) => {
           <planeBufferGeometry attach="geometry" args={[2, 2]} />
           <shaderMaterial ref={mat} attach="material" args={[shader]} uniforms-uPixSize-value={[1 / 2048, 1 / 2048]} />
         </mesh>
-        <mesh ref={mesh}>
+        <mesh ref={mesh} position={[0, 0, 0.1]}>
           <boxBufferGeometry attach="geometry" args={[0.2, 0.2, 0.2]} />
           <meshNormalMaterial attach="material" />
         </mesh>
