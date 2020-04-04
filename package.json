@@ -10,6 +10,7 @@
     "framer-motion": "^1.10.3",
     "prettier": "^1.19.1",
     "react": "^16.13.0",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "react-three-fiber": "^4.0.21",

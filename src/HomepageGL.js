@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from 'react-three-fiber'
 import { WebGLRenderTarget, Color } from 'three'
 import styled from 'styled-components'
 import { FeedbackShader } from './FeedbackShader'
-import { useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { useMotionValue, useSpring } from 'framer-motion'
 import { ResizeObserver } from '@juggle/resize-observer'
 
 const useFrameCount = () => {
@@ -28,10 +28,9 @@ const usePingPongBuffers = (bufferUniformKey, bufferSize) => {
   const material = useRef()
   const frame = useFrameCount()
 
-  const buffers = useMemo(
-    () => new Array(2).fill().map(() => new WebGLRenderTarget(bufferSize || 1024, bufferSize || 1024)),
-    [bufferSize]
-  )
+  const buffers = useMemo(() => new Array(2).fill().map(() => new WebGLRenderTarget(bufferSize, bufferSize)), [
+    bufferSize
+  ])
 
   useFrame(({ gl }) => {
     if (material.current && Scene.current && Camera.current) {
@@ -63,7 +62,7 @@ const Cube = () => {
         mesh.current.position.y = v
       }
     })
-  }, [cubeY])
+  }, [cubeY, viewport, size])
 
   useEffect(() => {
     cubeY.set(-1)
@@ -74,11 +73,12 @@ const Cube = () => {
       mesh.current.rotation.x += 0.01
       mesh.current.rotation.y += 0.005
       mesh.current.rotation.z += 0.015
+      console.log(mesh.current.position.y)
     }
   }, 2)
 
   return (
-    <mesh ref={mesh} position={[0, -20, 0.1]}>
+    <mesh ref={mesh} position={[0, -1, 0.1]}>
       <boxBufferGeometry attach="geometry" args={[0.6, 0.6, 0.6]} />
       <meshNormalMaterial attach="material" />
     </mesh>
@@ -116,7 +116,6 @@ const Feedback = ({ children }) => {
       <scene ref={sceneRef}>
         <mesh>
           <planeBufferGeometry attach="geometry" args={[width, height]} />
-          {/* <meshBasicMaterial attach="material" /> */}
           <shaderMaterial
             ref={materialRef}
             attach="material"

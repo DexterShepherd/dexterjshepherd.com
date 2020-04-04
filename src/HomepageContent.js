@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion as m } from 'framer-motion'
 
+const mobile = 'screen and (max-width: 767px)'
+
 const HomepageContent = () => {
   const [page, setPage] = useState('hello')
 
@@ -30,6 +32,7 @@ const HomepageContent = () => {
 
   const pageVariants = {
     hidden: {
+      pointerEvents: 'none',
       transition: {
         staggerChildren: 0.05,
         type: 'spring',
@@ -38,6 +41,7 @@ const HomepageContent = () => {
       }
     },
     visible: {
+      pointerEvents: 'all',
       transition: {
         staggerChildren: 0.05,
         type: 'spring',
@@ -282,6 +286,11 @@ const Underline = styled.span`
 
 const Container = styled(m.div)`
   padding: 64px;
+
+  @media ${mobile} {
+    padding: 16px;
+    margin-bottom: 64px;
+  }
 `
 
 const Paragraph = styled(m.p)`
@@ -289,12 +298,21 @@ const Paragraph = styled(m.p)`
   max-width: 600px;
 
   ${({ small }) => (small ? 'font-size: 1.2em;' : '')}
+
+  @media ${mobile} {
+    font-size: 1.2em;
+    ${({ small }) => (small ? 'font-size: 1em;' : '')}
+  }
 `
 
 const Title = styled(m.h1)`
   margin: 0;
   font-size: 5em;
   font-weight: 300;
+
+  @media ${mobile} {
+    font-size: 2em;
+  }
 `
 
 export { HomepageContent }
