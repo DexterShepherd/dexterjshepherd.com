@@ -112,7 +112,7 @@ const HomepageContent = () => {
 
         <Slide>
           <Paragraph small variants={slideVariants}>
-            I've spent the last 5 years working at startups with a few coorporate clients thrown in here and there. I
+            I've spent the last 5 years working at startups with a few corporate clients thrown in here and there. I
             also teach in the Digital Arts program at{' '}
             <a target="_blank" href="https://calarts.edu/">
               California Institute of the Arts
