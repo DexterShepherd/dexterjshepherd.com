@@ -145,7 +145,7 @@ const HomepageContent = () => {
         </Slide>
         <Slide>
           <Paragraph small variants={slideVariants}>
-            The code for this website, along with most of my other projects is available on{' '}
+            The code for this website, along with most of my other projects, is available on{' '}
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/DexterShepherd">
               Github
             </a>{' '}
