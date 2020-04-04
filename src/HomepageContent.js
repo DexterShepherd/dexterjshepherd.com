@@ -171,14 +171,6 @@ const HomepageContent = () => {
                   Mike Leisz
                 </a>
               </Item>
-              <Item>
-                <span role="img" aria-label="a video camera">
-                  📹
-                </span>
-                <a target="_blank" rel="noopener noreferrer" href="http://duncan.zone">
-                  DSF VR
-                </a>
-              </Item>
             </List>
           </Paragraph>
         </Slide>
@@ -259,6 +251,11 @@ const Item = styled.li`
 
 const Page = styled(m.div)`
   position: absolute;
+
+  @media ${mobile} {
+    width: 90%;
+    margin-bottom: 32px;
+  }
 `
 
 const NavButton = styled(m.button)`
@@ -289,7 +286,6 @@ const Container = styled(m.div)`
 
   @media ${mobile} {
     padding: 16px;
-    margin-bottom: 64px;
   }
 `
 
