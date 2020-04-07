@@ -16,5 +16,5 @@
 git clone git@github.com:DexterShepherd/dexterjshepherd.com.git
 cd dexterjshepherd.com
 yarn
-yarn dev
+yarn start
 ```
