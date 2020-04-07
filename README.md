@@ -1,16 +1,16 @@
-Personal Website of Dexter Shepherd.
+# Personal Website of Dexter Shepherd.
 
 
-Developed with
+### Developed with
 - React JS
 - React Three Fiber
 - ThreeJS
 - Framer-motion
 
-Hosted on Now.sh
-dexterjshepherd.com
+### Hosted on  
+  Now.sh
 
-Development
+### Development
 
 ```
 git clone git@github.com:DexterShepherd/dexterjshepherd.com.git
