@@ -12,6 +12,7 @@
     "react": "^16.13.0",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-three-fiber": "^4.0.21",
     "react-use-measure": "^2.0.0",

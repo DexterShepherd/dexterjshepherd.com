@@ -1,17 +1,19 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Home } from './Home'
 import styled from 'styled-components'
-import { HomepageGL } from './HomepageGL'
-import { HomepageContent } from './HomepageContent'
-import { BrowserView } from 'react-device-detect'
+import { Viewer } from './sketches/Viewer'
 
 function App() {
   return (
-    <Container>
-      <BrowserView>
-        <HomepageGL />
-      </BrowserView>
-      <HomepageContent />
-    </Container>
+    <Router>
+      <Container>
+        <Switch>
+          <Route path="/sketch" component={Viewer} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </Container>
+    </Router>
   )
 }
 
