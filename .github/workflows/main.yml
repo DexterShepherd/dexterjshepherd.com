@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+name: Lint
+
+on: [pull_request, push]
+
+jobs:
+  lint:
+    steps:
+      - uses: actions/checkout@v1
+      - uses: a-b-r-o-w-n/eslint-action@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          files: "src/**/*"
+          ignore: "src/some-file-to-ignore.js"
+          extensions: ".js,.ts"
+          working-directory: "./my-package"
+          quiet: "false"
