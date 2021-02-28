@@ -19,6 +19,7 @@
     "react-use-measure": "^2.0.0",
     "regl": "^1.4.2",
     "simplex-noise": "^2.4.0",
+    "split": "^1.0.1",
     "styled-components": "^5.0.1",
     "three": "^0.114.0"
   },
@@ -28,8 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src",
-    "lint:files": "eslint ",
-    "lint:files:report": "eslint --output-file eslint_report.json --format json ",
+    "lint:files": "node ./filter-ignored.js",
+    "lint:files:report": "node ./filter-ignored-report.js",
     "lint:report": "eslint --output-file eslint_report.json --format json src"
   },
   "eslintConfig": {
