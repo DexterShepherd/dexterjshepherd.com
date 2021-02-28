@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { FeedbackShader } from './FeedbackShader'
 import { useMotionValue, useSpring } from 'framer-motion'
 import { ResizeObserver } from '@juggle/resize-observer'
-import { Link } from 'react-router-dom'
+import { Link, Router } from 'react-router-dom'
 
 const useFrameCount = () => {
   const frameCount = useRef(0)
