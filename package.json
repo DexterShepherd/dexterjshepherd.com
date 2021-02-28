@@ -28,6 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src",
+    "lint:files": "eslint ",
+    "lint:files:report": "eslint --output-file eslint_report.json --format json ",
     "lint:report": "eslint --output-file eslint_report.json --format json src"
   },
   "eslintConfig": {
