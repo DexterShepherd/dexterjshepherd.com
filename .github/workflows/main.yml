@@ -22,8 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-      - name: Get changed files
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get Changed Files
+        id: files
         uses: jitterbit/get-changed-files@v1
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
