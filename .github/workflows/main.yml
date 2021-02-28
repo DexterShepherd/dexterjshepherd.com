@@ -53,9 +53,9 @@ jobs:
         run: npm install
         env:
           CI: TRUE
-      - name: Test Code Linting
-        run: npm run lint:files -- ${{ steps.files.outputs.all }}
-        continue-on-error: true
+      # - name: Test Code Linting
+      #   run: npm run lint:files -- ${{ steps.files.outputs.all }}
+      #   continue-on-error: true
       - name: Save Code Linting Report JSON
         # npm script for ESLint
         # eslint --output-file eslint_report.json --format json src
