@@ -18,6 +18,7 @@ const parsed = process.argv
   .join(' ')
 
 if (parsed.length) {
+  console.log('running report on files: ', parsed)
   execSync(`./node_modules/eslint/bin/eslint.js --output-file eslint_report.json --format json ${parsed}`, {
     stdio: 'inherit',
     cwd: '.'

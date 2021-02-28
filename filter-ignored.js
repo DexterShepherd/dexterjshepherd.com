@@ -18,5 +18,6 @@ const parsed = process.argv
   .join(' ')
 
 if (parsed.length) {
+  console.log('running filter lint on files', parsed)
   execSync(`./node_modules/eslint/bin/eslint.js ${parsed}`, { stdio: 'inherit', cwd: '.' })
 }
