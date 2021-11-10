@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route path="/sketch" component={Viewer} />
           {Redirects.map(({ from, to }) => (
-            <Route exact path={from}>
+            <Route exact path={from} key={from}>
               <Redirecter to={to} />
             </Route>
           ))}
