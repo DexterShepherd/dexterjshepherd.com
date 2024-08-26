@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect } from 'react'
+import React, { useRef, useMemo, useEffect, useState } from 'react'
 import { Canvas, useFrame, useThree } from 'react-three-fiber'
 import { WebGLRenderTarget, Color } from 'three'
 import styled from 'styled-components'
@@ -73,7 +73,6 @@ const Cube = () => {
       mesh.current.rotation.x += 0.01
       mesh.current.rotation.y += 0.005
       mesh.current.rotation.z += 0.015
-      console.log(mesh.current.position.y)
     }
   }, 2)
 
@@ -106,7 +105,6 @@ const Feedback = ({ children }) => {
 
   const { size, viewport, camera } = useThree()
   const { width, height } = viewport
-  console.log(viewport)
 
   const renderCam = useMemo(() => camera.clone(), [camera, size])
 
@@ -131,6 +129,14 @@ const Feedback = ({ children }) => {
 
 const GL = () => {
   useRender()
+  const [shouldDraw, setShouldDraw] = useState(false)
+  useEffect(() => {
+    setShouldDraw(true)
+  }, [])
+
+  if (!shouldDraw) {
+    return null
+  }
   return (
     <group position={[0, 0, 0]}>
       <Feedback>

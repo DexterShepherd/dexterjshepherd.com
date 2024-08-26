@@ -105,16 +105,19 @@ const HomepageContent = () => {
       <Page initial="hidden" animate={page === 'hello' ? 'visible' : 'hidden'} variants={pageVariants}>
         <Slide>
           <Paragraph variants={slideVariants}>
-            I'm a <Underline>front end developer</Underline> and <Underline>graphics programmer</Underline> based in Los
-            Angeles CA.
+            I'm a <Underline>software developer</Underline> based in London.
           </Paragraph>
         </Slide>
 
         <Slide>
           <Paragraph small variants={slideVariants}>
-            I've spent the last 5 years working at startups with a few corporate clients thrown in here and there. I
-            also teach in the Digital Arts program at{' '}
-            <a target="_blank" href="https://calarts.edu/">
+            I've spent my carrer working at startups and creative agencies, mostly on typescript, react, and frontend
+            performance. Right now I work on the frontend team @{' '}
+            <a target="_blank" href="https://runwayml.com/" rel="noreferrer">
+              Runway
+            </a>
+            . I also spent some time teaching in the Digital Arts program at{' '}
+            <a target="_blank" href="https://calarts.edu/" rel="noreferrer">
               California Institute of the Arts
             </a>
             .
@@ -135,12 +138,6 @@ const HomepageContent = () => {
               Twitter
             </a>
             .
-          </Paragraph>
-        </Slide>
-        <Slide>
-          <Paragraph small variants={slideVariants}>
-            I'm looking for new projects right now. Reach out on one of the platforms above, or send me an{' '}
-            <a href="mailto:dexterjshepherd@gmail.com">email</a> if you're working on something interesting.
           </Paragraph>
         </Slide>
         <Slide>
@@ -209,7 +206,7 @@ const HomepageContent = () => {
 
         <Slide>
           <Paragraph small variants={slideVariants}>
-            I teach courses in web development and creative coding. Sometimes I get to speak at meet ups and the like.
+            I taught courses in web development and creative coding. Sometimes I get to speak at meet ups and the like.
             <List>
               <Item>
                 <span role="img" aria-label="a person teaching">
