@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import ThemeProvider from "./ThemeProvider";
+import { Router } from "./Router";
 
 function App() {
   return (
     <ThemeProvider>
       <Root>
-        <h1>Hello, I'm Dexter</h1>
+        <Router />
       </Root>
     </ThemeProvider>
   );
 }
 
 const Root = styled.div`
-  background: ${(props) => props.theme.colors.red2};
-  color: ${(props) => props.theme.colors.red11};
+  background: ${(props) => props.theme.colors.gray2};
+  color: ${(props) => props.theme.colors.gray12};
   flex: 1;
 `;
 

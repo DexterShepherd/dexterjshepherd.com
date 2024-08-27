@@ -2,8 +2,11 @@
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 body {
@@ -19,4 +22,9 @@ body {
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
