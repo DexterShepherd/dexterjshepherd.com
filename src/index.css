@@ -1,18 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500&display=swap');
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: "IBM Plex Sans", sans-serif;
+}
 
 body {
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 300;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 #root {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+* {
+  padding: 0;
   margin: 0;
 }
